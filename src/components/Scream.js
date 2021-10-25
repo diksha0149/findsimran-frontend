@@ -16,8 +16,8 @@ const styles = {
     marginBottom:20,
   },
   image:{
-      width:80,
-      height:80,
+      width:50,
+      height:50,
       borderRadius:'50%'
   },
   content:{
@@ -34,12 +34,12 @@ class Scream extends Component {
     dayjs.extend(relativeTime)
     const {
       classes,
-      scream: { body, title, url, handle, createdAt, requiredSkills },
+      scream: { body, title, url, handle,userImage, createdAt, requiredSkills },
     } = this.props;
     return (
         <Card className={classes.card}>
             <CardContent>
-                <CardMedia image={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZq5aHfjv2-MOMDTUDw3NF25b65K--s6WPw&usqp=CAU"} className={classes.image} component={Link} to={`/user/${handle}`} />
+                <CardMedia image={userImage} className={classes.image} component={Link} to={`/user/${handle}`} />
                 <Typography variant="body1" color="primary" component={Link} to={`/user/${handle}`}>{handle}</Typography>
                 <Typography>rating</Typography>
             </CardContent>
